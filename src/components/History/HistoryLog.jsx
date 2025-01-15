@@ -10,7 +10,7 @@ const HistoryLog = () => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const brandQuery = useSelector((state) => state.table.brandQuery); 
   const { data, error, loading } = useFetch(
-    `http://localhost:8000/api/history-log?page=${currentPage}&limit=${rowsPerPage}&${brandQuery}`
+    `${import.meta.env.VITE_API_URL}/api/history-log?page=${currentPage}&limit=${rowsPerPage}&${brandQuery}`
   );
 
   useEffect(() => {

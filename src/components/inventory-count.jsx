@@ -11,7 +11,7 @@ const Count = () => {
   const dispatch = useDispatch();
   const condition = useSelector((state) => state.countCondition.condition);
   const { data, loading, error, refetch } = useFetch(
-    "http://localhost:8000/api/inventory-count",
+    `${import.meta.env.VITE_API_URL}/api/inventory-count`,
     { condition }
   );
   if (loading) return <p>Loading...</p>;

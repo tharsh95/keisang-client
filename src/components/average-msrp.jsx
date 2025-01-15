@@ -9,7 +9,7 @@ const Average = () => {
   const dispatch = useDispatch();
 
   const { data, loading, error, refetch } = useFetch(
-    "http://localhost:8000/api/average-msrp",
+    `${import.meta.env.VITE_API_URL}/api/average-msrp`,
     { condition }
   );
   if (loading) return <p>Loading...</p>;
